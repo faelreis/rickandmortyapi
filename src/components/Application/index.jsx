@@ -6,6 +6,7 @@ import IconDarkMode from '../../assets/icon/dark-mode-on.svg'
 import IconLightMode from '../../assets/icon/light-mode.svg'
 import IconDarkModeOff from '../../assets/icon/dark-mode-off.svg'
 import ImageHeroDarkMode from '../../assets/image/dark-hero-image.jpg'
+import ImageHeroLightMode from '../../assets/image/light-hero-image.jpg'
 
 
 export function Application(){
@@ -46,7 +47,8 @@ export function Application(){
                         <p className="desc light">Wubba Lubba Dub Dub! Cuidado com os olhos</p>
                     </div>
                     <div className="r-hero">
-                        <img src={ImageHeroDarkMode} alt="" />
+                        <img className="dark" src={ImageHeroDarkMode} alt="" />
+                        <img className="light" src={ImageHeroLightMode} alt="" />
                     </div>
                     </div>
                 </ContainerApp>

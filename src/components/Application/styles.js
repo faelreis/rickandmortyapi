@@ -135,6 +135,14 @@ export const HeroApp = styled.div`
             }
         }
     }
+    .r-hero{
+        img.dark{
+            display: block;
+        }
+        img.light{
+            display: none;
+        }
+    }
     }
     @media(max-width: 950px){
         padding: 30px 0px 0px 0px;
