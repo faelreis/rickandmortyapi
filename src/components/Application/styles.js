@@ -191,3 +191,139 @@ export const HeroApp = styled.div`
         }
     }
 `
+
+export const CharactersApp = styled.div`
+    padding: 7rem 0rem 10rem 0rem;
+    .wrapperCharacters{
+        .filter{
+            margin-bottom: 5rem;
+            .search{
+                width: 100%;
+                max-width: 40.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #2A2A2A;
+                color: var(--white);
+                border-radius: 20rem;
+                padding: 0.9rem 2rem;
+                border: 1px solid #2A2A2A;
+                transition: all .3s ease;
+                &:hover{
+                    border: 1px solid var(--blue);
+                }
+                input{
+                    background-color: transparent;
+                    outline: none;
+                }
+                img{
+                    transition: all .3s ease;
+                    cursor: pointer;
+                    &:hover{
+                        opacity: 80%;
+                        transform: rotate(15deg);
+                    }
+                }
+            }
+        }
+        .characters{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 30px;
+            .cardCharacter{
+                background-color: #2A2A2A;
+                padding: 2.5rem;
+                width: 100%;
+                max-width: 29.4rem;
+                border-radius: 1.5rem;
+                .imgCard{
+                    border-radius: 1.5rem;
+                    margin-bottom: 3rem;
+                }
+                .content-card{
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    .lWrapper{
+                        .nameCharacter{
+                            font-size: 2rem;
+                            margin-bottom: 2.5rem;
+                        }
+                        span{
+                            font-size: 17px;
+                        }
+                        .status{
+                            display: flex;
+                            align-items: center;
+                            gap: 2rem;
+                            margin-bottom: 1.0rem;
+                        }
+                        .specie{
+                            display: flex;
+                            align-items: center;
+                            gap: 2rem;
+                            margin-bottom: 1.0rem;
+                        }
+                        .planet{
+                            display: flex;
+                            align-items: center;
+                            gap: 2rem;
+                        }
+                    }
+                    .rWrapper{
+                        .favoriteCard{
+                            transition: all .3s ease;
+                            cursor: pointer;
+                            &:hover{
+                                opacity: 70%;
+                                transform: rotate(20deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`
+
+export const FooterApp = styled.div`
+    .wrapper-footer{
+        .tWrapper{
+            padding-bottom: 50px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #505050;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .toTop{
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                border-radius: 20rem;
+                padding: 1rem 2rem;
+                transition: all .3s ease;
+                &:hover{
+                    background-color: var(--blue);
+                }
+        }
+    }
+    .bWrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 30px;
+            a{
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: 300;
+                transition: all .3s ease;
+                &:hover{
+                    opacity: 70%;
+                }
+                strong{
+                    font-weight: 600;
+                }
+            }
+        }
+}
+`
