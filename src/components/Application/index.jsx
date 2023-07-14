@@ -27,7 +27,7 @@ import ImageCard from '../../assets/image/default-image-card.jpg'
 export function Application(){
     
     function addFavoriteCharacter(){
-        const [favoriteCharacter, setFavoriteCharacter] = useState();
+        const [favoriteCharacter, setFavoriteCharacter] = useState('');
         
         const handleClick = () => {
             setFavoriteCharacter(!favoriteCharacter);
@@ -107,8 +107,8 @@ export function Application(){
                                             </div>
                                     </div>
                                     <div className="rWrapper">
-                                        <img  onClick={handleClick} className={`favoriteCardOff ${favoriteCharacter ? 'active' : ''}`} src={FavoriteCardOff} alt="" />
-                                        <img   onClick={handleClick} className={`favoriteCardOn ${favoriteCharacter ? 'active' : ''}`} src={FavoriteCardOn} alt="" />
+                                        <img onClick={addFavoriteCharacter} className={`favoriteCardOff ${favoriteCharacter ? 'active' : ''}`} src={FavoriteCardOff} alt="" />
+                                        <img onClick={addFavoriteCharacter} className={`favoriteCardOn ${favoriteCharacter ? 'active' : ''}`} src={FavoriteCardOn} alt="" />
                                     </div>
                                 </div>
                             </div>
