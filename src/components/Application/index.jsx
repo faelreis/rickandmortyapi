@@ -1,4 +1,5 @@
-import { CharactersApp, ContainerApp, FooterApp, HeaderApp, HeroApp } from "./styles";
+import React, { useState } from 'react';
+import {  CharactersApp, ContainerApp, FooterApp, HeaderApp, HeroApp } from "./styles";
 
 //Icons
 import Logo from '../../assets/image/logo.svg'
@@ -24,9 +25,18 @@ import ImageCard from '../../assets/image/default-image-card.jpg'
 
 
 export function Application(){
+    
+    function addFavoriteCharacter(){
+        const [favoriteCharacter, setFavoriteCharacter] = useState();
+        
+        const handleClick = () => {
+            setFavoriteCharacter(!favoriteCharacter);
+          };
+    }
+
     return(
         <>
-            <HeaderApp>
+            <HeaderApp id='hero'>
                 <ContainerApp>
                     <div className="wrapper-header">
                         <img className="logo" src={Logo} alt="Logo Rick and Morty" />
@@ -97,7 +107,8 @@ export function Application(){
                                             </div>
                                     </div>
                                     <div className="rWrapper">
-                                        <img className="favoriteCard" src={FavoriteCardOff} alt="" />
+                                        <img  onClick={handleClick} className={`favoriteCardOff ${favoriteCharacter ? 'active' : ''}`} src={FavoriteCardOff} alt="" />
+                                        <img   onClick={handleClick} className={`favoriteCardOn ${favoriteCharacter ? 'active' : ''}`} src={FavoriteCardOn} alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -272,7 +283,7 @@ export function Application(){
                     <div className="wrapper-footer">
                         <div className="tWrapper">
                             <img src={Logo} alt="" />
-                            <a className="toTop" href="#characters">
+                            <a className="toTop" href="#hero">
                                 <span>Voltar ao topo</span>
                                 <img src={ArrowUp} alt="" />
                             </a>

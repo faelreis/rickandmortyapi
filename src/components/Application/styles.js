@@ -271,12 +271,27 @@ export const CharactersApp = styled.div`
                         }
                     }
                     .rWrapper{
-                        .favoriteCard{
+                        .favoriteCardOff{
                             transition: all .3s ease;
                             cursor: pointer;
                             &:hover{
                                 opacity: 70%;
                                 transform: rotate(20deg);
+                            }
+                            &.active{
+                                display: block;
+                            }
+                        }
+                        .favoriteCardOn{
+                            display: none;
+                            transition: all .3s ease;
+                            cursor: pointer;
+                            &:hover{
+                                opacity: 70%;
+                                transform: rotate(20deg);
+                            }
+                            &.active{
+                                display: block;
                             }
                         }
                     }
