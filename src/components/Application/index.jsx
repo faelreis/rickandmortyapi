@@ -26,13 +26,17 @@ import ImageCard from '../../assets/image/default-image-card.jpg'
 
 export function Application(){
     
-    function addFavoriteCharacter(){
-        const [favoriteCharacter, setFavoriteCharacter] = useState('');
-        
-        const handleClick = () => {
-            setFavoriteCharacter(!favoriteCharacter);
-          };
+    const Favoritos = () => {
+        // Passo 1: Criar um estado para armazenar a lista de favoritos
+        const [favoritos, setFavoritos] = useState([]);
+      
+        // Passo 2: Criar uma função para adicionar um favorito à lista de favoritos
+        const adicionarFavorito = (novoFavorito) => {
+          setFavoritos([...favoritos, novoFavorito]);
+        };
     }
+
+        
 
     return(
         <>
@@ -78,6 +82,12 @@ export function Application(){
                 </ContainerApp>
             </HeroApp>
 
+            <ul>
+                {favoritos.map((favorito, index) => (
+                <li key={index}>{favorito}</li>
+                ))}
+            </ul>
+
             <CharactersApp id='characters'>
                 <ContainerApp>
                     <div className="wrapperCharacters">
@@ -107,8 +117,8 @@ export function Application(){
                                             </div>
                                     </div>
                                     <div className="rWrapper">
-                                        <img onClick={addFavoriteCharacter} className={`favoriteCardOff ${favoriteCharacter ? 'active' : ''}`} src={FavoriteCardOff} alt="" />
-                                        <img onClick={addFavoriteCharacter} className={`favoriteCardOn ${favoriteCharacter ? 'active' : ''}`} src={FavoriteCardOn} alt="" />
+                                        <img onClick={() => adicionarFavorito('Novo Favorito')} src={FavoriteCardOff} alt="" />
+                                        <img src={FavoriteCardOn} alt="" />
                                     </div>
                                 </div>
                             </div>
