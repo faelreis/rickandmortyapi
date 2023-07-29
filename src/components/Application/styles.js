@@ -64,6 +64,10 @@ export const HeroApp = styled.div`
                 color: var(--blue);
             }
         }
+        p{
+            color: var(--green);
+            font-size: 1.8rem;
+        }
     }
     .r-hero{
         img.dark{
@@ -123,7 +127,7 @@ export const HeroApp = styled.div`
 `
 
 export const CharactersApp = styled.div`
-    padding: 7rem 0rem 10rem 0rem;
+    padding: 5rem 0rem 10rem 0rem;
     .wrapperCharacters{
         display: flex;
         align-items: center;
@@ -166,7 +170,25 @@ export const CharactersApp = styled.div`
             grid-gap: 30px;  
         }
     }
+    @media(max-width: 970px){
+        .wrapperCharacters{
+            .characters{
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 30px;  
+            }
+        }
+    }
+    @media(max-width: 780px){
+        .wrapperCharacters{
+            .characters{
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 30px;  
+            }
+        }
+    }
 `
+
+
 
 export const BtnLoadMore = styled.button`
 margin-top: 4rem;
@@ -222,4 +244,21 @@ export const FooterApp = styled.div`
             }
         }
 }
+`
+
+export const Loader = styled.div`
+        transition: all .3s ease;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 2023;
+        background-color: var(--bg-color-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    img{
+        width: 30%;
+    }
 `

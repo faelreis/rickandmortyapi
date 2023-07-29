@@ -38,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: var(--bg-color-dark);
+        padding: 0rem 1rem;
     }
 `
 

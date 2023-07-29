@@ -36,4 +36,27 @@ export const StyledCardCharacter = styled.div`
                 }
             }
         }
+        @media(max-width: 970px){
+            .content-card{
+                .lWrapper{
+                    .nameCharacter{
+                        font-size: 1.8rem;
+                        margin-bottom: 1%.7;
+                    }
+                 }
+            }
+        }
+        @media(max-width: 560px){
+            .content-card{
+                .lWrapper{
+                    .nameCharacter{
+                        font-size: 1.7rem;
+                    }
+                    span{
+                        font-size: 1.4rem;
+                    }
+                 }
+            }
+        }
+         
 `

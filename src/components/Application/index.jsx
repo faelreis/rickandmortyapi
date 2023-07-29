@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { BtnLoadMore, CharactersApp, ContainerApp, FooterApp, HeaderApp, HeroApp } from "./styles";
+import { Loader, BtnLoadMore, CharactersApp, ContainerApp, FooterApp, HeaderApp, HeroApp } from "./styles";
 import axios from 'axios'
 
 
 //Icons
 import Logo from '../../assets/image/logo.svg'
 import IconSearch from '../../assets/icon/search.svg'
-import IconStatus from '../../assets/icon/status-dark.svg'
-import IconSpecieDark from '../../assets/icon/species-dark.svg'
-import IconPlanetDark from '../../assets/icon/planet-dark.svg'
 import ArrowUp from '../../assets/icon/arrowUp.svg'
-
+import IconLoader from '../../assets/image/loader.webp'
 
 //Images
 import ImageHeroDarkMode from '../../assets/image/dark-hero-image.jpg'
 import ImageHeroLightMode from '../../assets/image/light-hero-image.jpg'
-import ImageCard from '../../assets/image/default-image-card.jpg'
 
 import { CardCharacter } from '../CardCharacter';
 
@@ -24,7 +20,9 @@ export function Application(){
 
     const [characters, setCharacters] = useState([]);
     const [page, setPage] = useState(1);
-    const [countPage, setCountPage] = useState('')
+    const [countPage, setCountPage] = useState('');
+    const [isLoader, setIsLoader] = useState(true);
+    const [searchCharacter, setSearchCharacter] = useState('');
 
     useEffect(() => {
         axios.get(`https://rickandmortyapi.com/api/character?page=${page}`)
@@ -32,11 +30,27 @@ export function Application(){
             const array = [...characters, ...response.data.results]
             setCharacters(array)
             setCountPage(response.data.info.pages)
+            setIsLoader(false)
         })
     }, [page])
 
+    useEffect(() => {
+        axios.get(`https://rickandmortyapi.com/api/character?name=${searchCharacter}`)
+        .then(response => {
+            setCharacters(response.data.results)
+        })
+    }, [searchCharacter])
+
     return(
         <>
+
+            {
+                isLoader &&  (
+                <Loader>
+                    <img src={IconLoader} alt="Loader" />
+                 </Loader>)
+            }
+
             <HeaderApp id='hero'>
                 <ContainerApp>
                     <div className="wrapper-header">
@@ -49,7 +63,7 @@ export function Application(){
                 <ContainerApp>
                     <div className="wrapper-hero">
                         <div className="l-hero">
-                        <h1>Conheça todos os personagens em um <strong>só lugar.</strong></h1>
+                        <h1>Conheça todos os personagens em um <strong>só lugar!</strong></h1>
                         <p>Da série Rick e Morty</p>
                     </div>
                     <div className="r-hero">
@@ -65,7 +79,7 @@ export function Application(){
                     <div className="wrapperCharacters">
                         <div className="filter">
                             <div className="search">
-                                <input type="text" placeholder="Personagem"/>
+                                <input onChange={event => setSearchCharacter(event.target.value)} value={searchCharacter} type="text" placeholder="Personagem"/>
                                 <img className="icon-search" src={IconSearch} alt="" />
                             </div>
                         </div>
@@ -104,7 +118,7 @@ export function Application(){
                             </a>
                         </div>
                         <div className="bWrapper">
-                            <a href='https://www.linkedin.com/in/rafaelreisfranco/' target="_blank">Desenvolvido por <strong>Rafael Reis</strong></a>
+                            <a href="https://www.linkedin.com/in/rafaelreisfranco/" target="_blank">Desenvolvido por <strong>Rafael Reis</strong></a>
                         </div>
                     </div>
                 </ContainerApp>
