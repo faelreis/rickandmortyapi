@@ -278,6 +278,11 @@ export const Loader = styled.div`
         align-items: center;
         justify-content: center;
     img{
-        width: 30%;
+        width: 40%;
+    }
+    @media(max-width: 780px){
+        img{
+            width: 70%;
+        }
     }
 `
