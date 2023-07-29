@@ -186,15 +186,23 @@ export const CharactersApp = styled.div`
             }
         }
     }
+    @media(max-width: 490px){
+        .wrapperCharacters{
+            .characters{
+                grid-template-columns: 1fr;
+                grid-gap: 30px;  
+            }
+        }
+    }
 `
 
 
 
 export const BtnLoadMore = styled.button`
-margin-top: 4rem;
+    margin-top: 4rem;
     padding: 20px 30px;
     background: var(--blue);
-    border-radius: 10px;
+    border-radius: 20rem;
     border: 1px solid var(--blue);
     transition: all .3s ease;
     &:hover{
@@ -242,7 +250,18 @@ export const FooterApp = styled.div`
                     font-weight: 600;
                 }
             }
-        }
+    }
+    }
+    @media(max-width: 490px){
+        .wrapper-footer{
+            .tWrapper{
+                flex-direction: column-reverse;
+                .toTop{
+                    margin-bottom: 3rem;
+                    font-size: 2.5rem;
+                }
+            }
+    }
 }
 `
 
