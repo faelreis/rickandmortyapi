@@ -15,20 +15,7 @@ export const HeaderApp = styled.div`
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        a{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 3.2rem;
-            padding: 1.3rem 2rem;
-            background-color: var(--blue);
-            gap: 10px;
-            transition: all .3s ease;
-            cursor: pointer;
-            &:hover{
-                filter: drop-shadow(0px 0px 36px #11B0C8);
-            }
+        justify-content: center;
     }
     }
     @media(max-width: 440px){
@@ -67,71 +54,14 @@ export const HeroApp = styled.div`
     .l-hero{
         h1{
             width: 100%;
+            max-width: 400px;
             font-size: 4.8rem;
             font-weight: 700;
+            margin-bottom: 2rem;
             strong{
                 font-size: 4.8rem;
                 font-weight: 700;   
                 color: var(--blue);
-            }
-        }
-        .btns-mode{
-            margin: 40px 0px 35px 0px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            .dark-mode{
-                background-color: var(--blue);
-                color: var(--white);
-                padding: 1rem 2rem;
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                border-radius: 4rem;
-                transition: all .3s ease;
-                &:hover{
-                    filter: drop-shadow(0px 0px 36px #11B0C8);
-                    img{
-                        transition: all .3s ease;
-                        transform: rotate(40deg);
-                    }
-                }
-
-            }
-            .dark-mode.off{
-                display: none;
-                background-color: var(--white);
-                span{
-                    color: #313234;
-                }
-            }
-            .light-mode{
-                background-color: #313234;
-                color: var(--white);
-                padding: 1rem 2rem;
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                border-radius: 4rem;
-                transition: all .3s ease;
-                &:hover{
-                    filter: drop-shadow(0px 0px 36px #FFFFFF50);
-                    img{
-                        transition: all .3s ease;
-                        transform: rotate(40deg);
-                    }
-                }
-                &.active{
-                    background-color: var(--blue);
-                }
-            }
-        }
-        .desc{
-            font-size: 18px;
-            color: var(--blue);
-            display: none;
-            &.active{
-                display: block;
             }
         }
     }
@@ -195,6 +125,10 @@ export const HeroApp = styled.div`
 export const CharactersApp = styled.div`
     padding: 7rem 0rem 10rem 0rem;
     .wrapperCharacters{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         .filter{
             margin-bottom: 5rem;
             .search{
@@ -229,75 +163,22 @@ export const CharactersApp = styled.div`
         .characters{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-gap: 30px;
-            .cardCharacter{
-                background-color: #2A2A2A;
-                padding: 2.5rem;
-                width: 100%;
-                max-width: 29.4rem;
-                border-radius: 1.5rem;
-                .imgCard{
-                    border-radius: 1.5rem;
-                    margin-bottom: 3rem;
-                }
-                .content-card{
-                    display: flex;
-                    align-items: flex-start;
-                    justify-content: space-between;
-                    .lWrapper{
-                        .nameCharacter{
-                            font-size: 2rem;
-                            margin-bottom: 2.5rem;
-                        }
-                        span{
-                            font-size: 17px;
-                        }
-                        .status{
-                            display: flex;
-                            align-items: center;
-                            gap: 2rem;
-                            margin-bottom: 1.0rem;
-                        }
-                        .specie{
-                            display: flex;
-                            align-items: center;
-                            gap: 2rem;
-                            margin-bottom: 1.0rem;
-                        }
-                        .planet{
-                            display: flex;
-                            align-items: center;
-                            gap: 2rem;
-                        }
-                    }
-                    .rWrapper{
-                        .favoriteCardOff{
-                            transition: all .3s ease;
-                            cursor: pointer;
-                            &:hover{
-                                opacity: 70%;
-                                transform: rotate(20deg);
-                            }
-                            &.active{
-                                display: block;
-                            }
-                        }
-                        .favoriteCardOn{
-                            display: none;
-                            transition: all .3s ease;
-                            cursor: pointer;
-                            &:hover{
-                                opacity: 70%;
-                                transform: rotate(20deg);
-                            }
-                            &.active{
-                                display: block;
-                            }
-                        }
-                    }
-                }
-            }
+            grid-gap: 30px;  
         }
+    }
+`
+
+export const BtnLoadMore = styled.button`
+margin-top: 4rem;
+    padding: 20px 30px;
+    background: var(--blue);
+    border-radius: 10px;
+    border: 1px solid var(--blue);
+    transition: all .3s ease;
+    &:hover{
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid var(--blue);
     }
 `
 
